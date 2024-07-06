@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Village</title>
+    <link rel="stylesheet" href="/css/villages/villages.css">
+    <%- include('../../partials/header.ejs') %>
+</head>
+
+<body>
+    <h1>Update Village</h1>
+    <form action="/villages/updateVillage/<%= villageDetail.id %>" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= villageDetail.name %>">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"><%= villageDetail.description %></textarea>
+        </div>
+        <div>
+            <label for="image">Upload New Image:</label>
+            <input type="file" id="image" name="image">
+        </div>
+        <div>
+            <label>Current Images:</label>
+            <% villageDetail.images.forEach(function(image) { %>
+                <img src="<%= image %>" alt="Village Image" width="200">
+                <% }); %>
+        </div>
+        <button type="submit">Update Village</button>
+    </form>
+</body>
+
+</html>

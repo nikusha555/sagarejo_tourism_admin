@@ -1,0 +1,44 @@
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    
+    
+}
+
+.village_cards {
+    border: 5px double black;
+    box-shadow: 0px 0px 10px inset #252525;
+    justify-content: space-between;
+    margin: 20px;
+    transition: 1.3s;
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+}
+.village_cards:hover {
+    scale: 1.05;
+}
+
+.add_container {
+    background-color: floralwhite;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+    margin-top: 0px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+
+.add_button {
+    width: 80px;
+    height: 80px;
+ 
+
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villages</title>
+    <link rel="stylesheet" href="/css/villages/villages.css">
+    <%- include('../../partials/header.ejs') %>
+</head>
+
+<body>
+    <div class="add_container">
+        <a href="/addVillage"><button class="add_button">Add Village</button></a>
+    </div>
+
+    <div class="view_side_container">
+        <ul class="container">
+            <% data.forEach(function(village) { %>
+                <a href="villages/village/<%= village.id %>">
+                    <div class="village_cards">
+                        <h2>
+                            <%= village.name %>
+                        </h2>
+                        <p>
+                            <%= village.description %>
+                        </p>
+                        <% if (village.village_image) { %>
+                            <img class="village_cards_image" src="/images/<%= village.village_image %>"
+                                alt="Image of <%= village.name %>" width="200">
+                            <% } else { %>
+                                <p>No image available</p>
+                                <% } %>
+                                    <a href="/villages/updateVillage/<%= village.id %>"><button>Edit</button></a>
+                                    <!-- Add edit link -->
+                    </div>
+                    <% }) %>
+                </a>
+
+        </ul>
+    </div>
+
+    <script src="/js/villages/villages.js"></script>
+</body>
+
+</html>

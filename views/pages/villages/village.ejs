@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= village.name %> Details
+    </title>
+    <link rel="stylesheet" href="/css/villages/village.css">
+    <%- include('../../partials/header.ejs') %>
+</head>
+
+<body>
+    <div class="village-details">
+        <h1>
+            <%= village.name %>
+        </h1>
+        <p>
+            <%= village.description %>
+        </p>
+        <% if (village.village_image) { %>
+            <img src="/images/uploads/<%= village.village_image %>" alt="Image of <%= village.name %>" width="400">
+            <% } else { %>
+                <p>No image available</p>
+                <% } %>
+    </div>
+</body>
+
+</html>

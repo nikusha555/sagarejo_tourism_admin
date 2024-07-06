@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Village</title>
+    <link rel="stylesheet" href="/css/villages/addVillage.css">
+    <%- include('../../partials/header.ejs') %>
+</head>
+
+<body>
+    <h1>დაამატე ახალი სოფელი</h1>
+    <div class="parent-container">
+        <div class="form-container">
+            <form class="form" action="/addVillage" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">სახელი :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="description">აღწერა :</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                <br>
+    
+                <button class="form-submit-btn" type="submit">დამატება</button>
+    
+            </form>
+        </div>
+    
+    </div>
+    
+</body>
+
+</html>
