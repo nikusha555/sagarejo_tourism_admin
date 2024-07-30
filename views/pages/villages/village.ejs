@@ -19,11 +19,15 @@
         <p>
             <%= village.description %>
         </p>
-        <% if (village.village_image) { %>
-            <img src="/images/uploads/<%= village.village_image %>" alt="Image of <%= village.name %>" width="400">
-            <% } else { %>
-                <p>No image available</p>
-                <% } %>
+        <div class="images-container">
+            <% village.images.forEach(function(image) { %>
+                <div>
+
+                    <img src="/images/uploads/<%= image %>" alt="Image of <%= village.name %>" width="400"
+                        height="200px">
+                </div>
+                <% }) %>
+        </div>
     </div>
 </body>
 

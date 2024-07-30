@@ -19,18 +19,20 @@
             <% data.forEach(function(village) { %>
                 <a href="villages/village/<%= village.id %>">
                     <div class="village_cards">
-                        <h2>
-                            <%= village.name %>
-                        </h2>
-                        <p>
-                            <%= village.description %>
-                        </p>
                         <% if (village.village_image) { %>
-                            <img class="village_cards_image" src="/images/<%= village.village_image %>"
-                                alt="Image of <%= village.name %>" width="200">
+                            <img class="v_image" src="/images/admin-uploads/<%= village.village_image %>"
+                                alt="Image of <%= village.name %>">
                             <% } else { %>
                                 <p>No image available</p>
                                 <% } %>
+
+                                    <h2>
+                                        <%= village.name %>
+                                    </h2>
+                                    <p>
+                                        <%= village.description %>
+                                    </p>
+
                                     <a href="/villages/updateVillage/<%= village.id %>"><button>Edit</button></a>
                                     <!-- Add edit link -->
                     </div>
